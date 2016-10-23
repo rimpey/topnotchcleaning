@@ -1,0 +1,9 @@
+/* =================================
+   BASE / COLOURS
+   ================================= */
+
+   // remove blue border button focus on hamburger button
+
+   button.navbar-toggler:focus {
+       outline:0;
+    }
