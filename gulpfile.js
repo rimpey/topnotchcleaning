@@ -8,6 +8,7 @@ var autoprefixer = require('autoprefixer');
 var postcssFlexbugsFixes = require('postcss-flexbugs-fixes');
 var plugins = require('gulp-load-plugins')();
 var config = require('./config.json');
+var ghPages = require('gulp-gh-pages');
 
 gulp.task('sass:inject', function () {
     return gulp
@@ -111,7 +112,7 @@ gulp.task('markup', function () {
         .pipe(plugins.htmlReplace({
             fonts: {
                 src: config.assets.fonts.google,
-                tpl: '<link href="http://fonts.googleapis.com/css?family=%s" rel="stylesheet" type="text/css">'
+                tpl: '<link href="//fonts.googleapis.com/css?family=%s" rel="stylesheet" type="text/css">'
             }
         }, {
             keepBlockTags: false
@@ -119,6 +120,11 @@ gulp.task('markup', function () {
         .pipe(gulp.dest('src'));
 });
 
-gulp.task('dist', gulp.series('clean:dist', 'sass', 'markup', gulp.parallel('useref', 'images', 'fonts')));
+gulp.task('githubpages', function () {
+    return gulp.src('./dist/**/*')
+        .pipe(ghPages());
+})
+
+gulp.task('dist', gulp.series('clean:dist', 'sass', 'markup', gulp.parallel('useref', 'images', 'fonts'), 'githubpages'));
 
 gulp.task('default', gulp.series('sass', 'markup', gulp.parallel('browserSync', 'watch')));
