@@ -9,6 +9,7 @@ var postcssFlexbugsFixes = require('postcss-flexbugs-fixes');
 var plugins = require('gulp-load-plugins')();
 var config = require('./config.json');
 var ghPages = require('gulp-gh-pages');
+// var validate = require('./src/vendor/jquery-validation');
 
 gulp.task('sass:inject', function () {
     return gulp

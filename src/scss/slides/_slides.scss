@@ -2,6 +2,10 @@
    SLIDES / SLIDES
    ================================= */
 
+h3.quotes {
+    color: $orange;
+}
+
 .quotes {
     font-family: 'Goudy Bookletter 1911', serif;
     font-weight: normal;
@@ -25,8 +29,9 @@
 } 
 
 .slide {
-    background-color: #fff;
+    // background-color: #fff;
     padding: 30px 0 10px 0;
+    // font-family: ????? ************************ Myriad Pro-font
 }
 
 #meetus{
@@ -50,7 +55,9 @@
 }
 
 #garden {
-    color: #333333;
+    background: rgba(222, 218, 206, .8);
+    // background: rgba(118, 125, 109, .8);
+    color: $brown;
 }
 
 #garden-list {
@@ -73,6 +80,77 @@
         }
     }
 }
+
+#quote {
+
+    background: rgba(255, 86, 27, .3);
+    color: $brown;
+    
+    textarea {
+        resize: none; // removes the resize handle bottom right 
+        overflow: hidden; // no scroll 
+    }
+
+}
+
+.form-control {
+    background: rgba(222, 218, 206, .8);  // ???????????????????
+}
+
+input {
+    #input-name {
+
+        .form-control {
+            background: rgba(222, 218, 206, .8);
+
+            &:focus {  // trying to deal with User Agent Stylesheet Yellow colour auto fill text
+                background: rgba(222, 218, 206, .8); 
+                border-color: $darkgrey;
+                outline: none;   
+            }
+        }
+    }
+}
+
+.btn-primary {
+    color: $brown;
+    background-color: $orange;
+    border-color: $orange;
+    float: right;
+
+    &:hover, &:active, &:focus {
+        color: $brown;
+        background-color: $orange;
+        border-color: $orange;  
+        outline: none; 
+    }
+}
+
+btn {
+    color: $brown;
+    background-color: $orange;
+    border-color: $orange;
+    float: right;
+
+   &:hover, &:active, &:focus {
+        color: $brown;
+        background-color: $orange;
+        border-color: $orange;  
+        outline: none; 
+    }
+}
+
+
+// button,
+// button:active,
+// button:focus, 
+// button:hover,
+// .btn,
+// .btn:active, 
+// .btn:focus, 
+// .btn:hover{   
+//     outline:none !important;
+// }
 
 // *** Media Queries **
 
