@@ -90,14 +90,15 @@ $(document).ready(function() {
 
 			$.ajax({
 				type: "POST",
-				url: "https://formspree.io/topnotchclean1@hotmail.com", 
+				// url: "https://formspree.io/topnotchclean1@hotmail.com", 
+				url: "https://formspree.io/rhondaimpey@gmail.com", 
 				data: $(form).serialize(),
 				dataType : "json",
 				
 				success: function(result){
 					console.log("submit handler ajax success");
 					$("form").fadeOut(1000, function(){
-						$("#success_message").removeClass("hidden-sm-up").fadeIn();
+						$("#success_message").removeClass("hidden-xs-up").fadeIn();
 					});
 				},
 
