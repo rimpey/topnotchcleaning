@@ -90,8 +90,8 @@ $(document).ready(function() {
 
 			$.ajax({
 				type: "POST",
-				// url: "https://formspree.io/topnotchclean1@hotmail.com", 
-				url: "https://formspree.io/rhondaimpey@gmail.com", 
+				url: "https://formspree.io/topnotchclean1@hotmail.com", 
+				// url: "https://formspree.io/rhondaimpey@gmail.com", 
 				data: $(form).serialize(),
 				dataType : "json",
 				
