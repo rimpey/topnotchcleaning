@@ -12,19 +12,6 @@
         <link href="//fonts.googleapis.com/css?family=Goudy+Bookletter+1911" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <!--<div class="pos-f-t">
-            <div class="collapse" id="navbar-header">
-                <div class="container-fluid bg-inverse p-a-1">
-                    <h3>Collapsed content</h3>
-                    <p>Toggleable via the navbar brand.</p>
-                </div>
-            </div>
-            <div class="navbar navbar-light bg-faded navbar-static-top">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-header">
-                &#9776;
-                </button>
-            </div>
-        </div>-->
 
         <nav class="navbar navbar-fixed-top navbar-dark bg-inverse" role="navigation">
 
@@ -58,7 +45,8 @@
         <div id="meetus" class="slide">
             <div class="container">
                 <div class="quotes_container">
-                    <h3 class="quotes">Who We Are - Our Story</h3>
+                    <h3 class="quotes">Who We Are</h3>
+                    <!--<h3 class="quotes">Our Story</h3>-->
                     <p>
                         Lorem ipsum dolor sit amet, ut pri ubique doctus, duis deleniti ius ut. Id his sale atqui 
                         ceteros, nec in veniam epicuri maluisset. Labores maiorum an his, debet eleifend an usu. 
@@ -159,35 +147,55 @@
                 </div>
             </div>
         </div>
-        <!--<div id="quote" class="slide">
+        <div id="quote" class="slide">
             <div class="container">
-                <div class="row">
+                
 
-                    <form>
+                <!--<form action="https://formspree.io/rhondaimpey@gmail.com" method="POST">-->
+                <form>
+                    <div class="form-group col-sm-12">
+                        <p>
+                            With over 20 years cleaning experience you will not be disappointed. 
+                            Just send details of your cleaning and/or gardening requirements and 
+                            we’ll be happy to meet with you or send a reply email
+                        </p>
+                    </div>
+
+                    <div class="col-md-6 quote-panel">
                         <div class="form-group">
                             <label for="input-name">Name</label>
-                            <input type="text" class="form-control" id="input-name" aria-describedby="nameHelp" placeholder="Enter name">
+                            <input type="text" name="name" class="form-control" id="input-name">
                         </div>
                         <div class="form-group">
                             <label for="input-email">Email</label>
-                            <input type="email" class="form-control" id="input-email" aria-describedby="emailHelp" placeholder="Enter email">
+                            <input type="email" name="email" class="form-control" id="input-email">
                         </div>
                         <div class="form-group">
                             <label for="input-phone">Phone</label>
-                            <input type="tel" class="form-control" id="input-phone" aria-describedby="phoneHelp" placeholder="Enter phone">
+                            <input type="tel" name="phone" class="form-control" id="input-phone">
                         </div>
+                    </div>
 
-                        <div class="form-group">
-                            <label for="input-message">Message</label>
-                            <textarea class="form-control" id="input-message" rows="3"></textarea>
-                        </div>
+                    <div class="form-group col-md-6 quote-panel">
+                        <label for="input-message">Message</label>
+                        <textarea class="form-control" name="message" id="input-message" rows="9"></textarea>
+                    </div>
 
-                        <button type="submit" class="btn btn-primary">Quote</button>
-                    </form>
+                    <!-- Add this "honeypot" field to avoid spam by fooling scrapers. 
+                    If a value is provided, the submission will be silently ignored. 
+                    The input should be hidden with CSS. -->
+                    <input type="text" name="_gotcha" style="display:none" />
 
-                </div> 
+                    <div class="form-group col-sm-12">
+                        <button type="submit" value="Send" class="btn btn-primary btn-quote">Quote</button>
+                    </div>
+                </form>
+                <div id="success_message" class="hidden-xs-up">
+                    Thank you for your enquiry we will be in contact with you.
+                </div>
+
             </div> 
-        </div>   -->
+        </div>   
 
         <script src="js/main.min.js"></script>
     </body>
