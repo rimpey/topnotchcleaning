@@ -1,0 +1,22 @@
+/* =================================
+   LAYOUT / FOOTER
+   ================================= */
+
+footer {
+
+    background-color: $brown;
+
+    ul {
+        list-style: none;
+        padding-left: 0;
+        padding-top: 1rem;
+
+        li {
+            color: $lightgrey;  
+
+            &.abn {
+                font-size: x-small;
+            }  
+        }
+    }
+}

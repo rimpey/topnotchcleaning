@@ -118,7 +118,7 @@ input {
     border-color: $orange;
     float: right;
 
-    &:hover, &:active, &:focus {
+    &:hover, &:active, &:focus, &:active:focus, &:active:hover {
         color: $brown;
         background-color: $orange;
         border-color: $orange;  
@@ -126,19 +126,19 @@ input {
     }
 }
 
-btn {
-    color: $brown;
-    background-color: $orange;
-    border-color: $orange;
-    float: right;
+// btn {
+//     color: $brown;
+//     background-color: $orange;
+//     border-color: $orange;
+//     float: right;
 
-   &:hover, &:active, &:focus {
-        color: $brown;
-        background-color: $orange;
-        border-color: $orange;  
-        outline: none; 
-    }
-}
+//    &:hover, &:active, &:focus {
+//         color: $brown;
+//         background-color: $orange;
+//         border-color: $orange;  
+//         outline: none; 
+//     }
+// }
 
 
 // button,
