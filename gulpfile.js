@@ -88,6 +88,13 @@ gulp.task('images', function () {
         .pipe(gulp.dest('dist/img'))
 });
 
+// copy font awesome from vendor folder to src/fonts
+gulp.task('icons', function() {
+    return gulp
+        .src('src/vendor/font-awesome/fonts/**.*')
+        .pipe(gulp.dest('src/fonts'));
+});
+
 gulp.task('fonts', function () {
     return gulp
         .src('src/fonts/**/*')
@@ -128,4 +135,4 @@ gulp.task('githubpages', function () {
 
 gulp.task('dist', gulp.series('clean:dist', 'sass', 'markup', gulp.parallel('useref', 'images', 'fonts'), 'githubpages'));
 
-gulp.task('default', gulp.series('sass', 'markup', gulp.parallel('browserSync', 'watch')));
+gulp.task('default', gulp.series('sass', 'markup', 'icons', gulp.parallel('browserSync', 'watch')));

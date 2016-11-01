@@ -5,6 +5,8 @@
 footer {
 
     background-color: $brown;
+    overflow: hidden;
+    padding-bottom: 1rem;
 
     ul {
         list-style: none;
@@ -19,4 +21,13 @@ footer {
             }  
         }
     }
+
+    span {
+            color: $lightgrey;
+            vertical-align: bottom;  
+
+            &.abn {
+                font-size: x-small;
+            }  
+        }
 }
