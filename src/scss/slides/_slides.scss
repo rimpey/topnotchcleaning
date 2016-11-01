@@ -3,11 +3,13 @@
    ================================= */
 
 h3.quotes {
-    color: $orange;
+    color: $blue;
+    font-weight: bold;
 }
 
 .quotes {
-    font-family: 'Goudy Bookletter 1911', serif;
+    //font-family: 'Goudy Bookletter 1911', serif;
+    font-family: 'Source Sans Pro', sans-serif;
     font-weight: normal;
     font-size: 30px;
     text-align: left;
@@ -29,72 +31,81 @@ h3.quotes {
 } 
 
 .slide {
-    // background-color: #fff;
     padding: 30px 0 10px 0;
-    // font-family: ????? ************************ Myriad Pro-font
+    position: relative;
+    border-bottom: 2px solid $yellow;
+    font-weight: bold;
+}
+
+.mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(35,182,234,0.7);
 }
 
 #meetus{
     background:url('../img/kym-steve.jpg') 50% 0 no-repeat fixed;
-    // background: rgba(255, 86, 27, .3);
-    color: $brown;
+    color: #fff;
     background-size: cover;
-    // font-weight: bold;
-    // height: 500px;
+    h3.quotes {
+        color: $yellow;
+    }
 }
 
 #clean {
-    background: rgba(222, 218, 206, .8);
+    background: #fff;
     color: $brown;
 }
 
 #clean-list {
-    background: url('../img/sponge.jpg') 50% 0 no-repeat fixed;
+    background: url('../img/sponge.png') 50% 0 no-repeat fixed;
     color: $brown;
     background-size: cover;
 }
 
 #garden {
-    background: rgba(222, 218, 206, .8);
-    // background: rgba(118, 125, 109, .8);
+    background: #fff;
     color: $brown;
 }
 
 #garden-list {
-    background: url('../img/mower.jpg') 50% 0 no-repeat fixed;
+    background: url('../img/mower.png') 50% 0 no-repeat fixed;
     color: $brown;
     background-size: cover;
 }
 
 .services-list {
-    padding: 120px 0;
+    padding: 50px 0;
 
     ul {
         display: block;
-        font-family: 'Goudy Bookletter 1911', serif;
+	    font-family: 'Source Sans Pro', sans-serif;
         font-weight: normal;
-        font-size: 30px;
+        font-size: 20px;
+        color: $yellow;
 
-        li {
-            list-style-type: none;
-        }
+        p {
+	       color: #fff;
+	       margin-bottom: 1rem;
+	    }
     }
 }
 
 #quote {
-
-    background: rgba(255, 86, 27, .3);
+    background: #fff;
     color: $brown;
     
     textarea {
         resize: none; // removes the resize handle bottom right 
         overflow: hidden; // no scroll 
     }
-
 }
 
 .form-control {
-    background: rgba(222, 218, 206, .8);  // ???????????????????
+    background: $lightbluebg;  
 }
 
 input {
@@ -113,44 +124,19 @@ input {
 }
 
 .btn-primary {
-    color: $brown;
-    background-color: $orange;
-    border-color: $orange;
+    color: #fff;
+    background-color: $blue;
+    border-color: $blue;
     float: right;
 
     &:hover, &:active, &:focus, &:active:focus, &:active:hover {
-        color: $brown;
-        background-color: $orange;
-        border-color: $orange;  
+        color: #fff;
+        background-color: $blue;
+        border-color: $blue;  
         outline: none; 
     }
 }
 
-// btn {
-//     color: $brown;
-//     background-color: $orange;
-//     border-color: $orange;
-//     float: right;
-
-//    &:hover, &:active, &:focus {
-//         color: $brown;
-//         background-color: $orange;
-//         border-color: $orange;  
-//         outline: none; 
-//     }
-// }
-
-
-// button,
-// button:active,
-// button:focus, 
-// button:hover,
-// .btn,
-// .btn:active, 
-// .btn:focus, 
-// .btn:hover{   
-//     outline:none !important;
-// }
 
 // *** Media Queries **
 

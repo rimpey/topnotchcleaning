@@ -3,10 +3,14 @@
    ================================= */
 
 footer {
-
-    background-color: $brown;
+    //border-top: 2px solid $yellow;
+    background-color: $blue;
     overflow: hidden;
     padding-bottom: 1rem;
+
+    h3.quotes {
+        color: $yellow;
+    }
 
     ul {
         list-style: none;
@@ -14,11 +18,13 @@ footer {
         padding-top: 1rem;
 
         li {
-            color: $lightgrey;  
-
-            &.abn {
-                font-size: x-small;
-            }  
+            //color: $lightgrey;  
+	    color: #fff;
+	    
+	    a, a:hover, a:focus {
+	    	color: #fff;
+		text-decoration: none;
+	    } 
         }
     }
 
@@ -28,6 +34,7 @@ footer {
 
             &.abn {
                 font-size: x-small;
+                color: $yellow;
             }  
         }
-}
+    }

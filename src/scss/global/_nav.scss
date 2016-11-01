@@ -40,6 +40,15 @@
     }
 }
 
+.navbar {
+    padding: 0;
+    border-bottom: 2px solid $yellow;
+}
+
+.navbar-brand {
+    padding: 0;
+}
+
 #logo a { 
     color: #fff; 
     text-decoration: none; 
@@ -58,7 +67,62 @@
     // so that hamburger menu will move onto line below logo text otherwise floats next to it
     // clear float left from previous item logo text
     clear: left;
+    .navbar-nav {
+        line-height: 50px;
+        padding: 25px;
+
+        .nav-item + .nav-item {
+            margin-left: 0;
+        }
+    }
 }
+
+// ** NAV BAR **/
+
+.navbar-dark {
+
+    .navbar-brand {
+        color: $orange;
+    }
+    .navbar-brand:hover {
+        color: $orange;
+    }
+
+    .navbar-nav {
+        .nav-link {
+            color: #fff;
+            font-size: 20px;
+            padding-top: 0;
+            padding-bottom: 0;
+            &.active {
+                color: $yellow;
+                &:hover, &:focus {
+                    color: $yellow;
+                }
+            }
+        }
+        .nav-link:hover {
+            color: $yellow;
+        } 
+    }
+
+}
+
+.navbar.bg-inverse {
+    background: $blue; 
+    background: linear-gradient($bluetop, $blue);
+}
+
+
+// hamburger and border orange colour
+.navbar-toggler {
+    // unicode text
+    color: $yellow;
+    border: 2px solid $yellow;
+    font-size: 30px;
+    margin: 25px;
+}
+
 
 /* Small. Above 34em (544px) */
 @media screen and (min-width: 34em) {
@@ -66,6 +130,13 @@
     #topnotch-menu  {
         // above mobile then menu items will be floated 
         clear: none;
+        .navbar-nav {
+            line-height: 100px;
+            padding: 0 2rem 0 0;
+
+            .nav-item + .nav-item {
+                margin-left: 2rem;
+            }
+        }
     }
 }
-

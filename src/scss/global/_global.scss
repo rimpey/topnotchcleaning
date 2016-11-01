@@ -6,6 +6,8 @@ body{
     margin: 0;
     padding: 0;
     width: 100%;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: $brown;
 }
 
 h1 {
@@ -29,7 +31,7 @@ h2 {
 }
 
 h3 {
-    font-family: Oswald;
+    //font-family: Oswald;
     font-weight: normal;
     font-size: 16px;
     text-align: center;
@@ -61,6 +63,6 @@ p {
     margin-bottom: 3rem;
 }
 
-.navbar {
-  margin-bottom: 20px;
-}
+// .navbar {
+//   //margin-bottom: 20px;
+// }

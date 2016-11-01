@@ -13,40 +13,16 @@ $darkgrey: #767d6d;
 $lightgrey: #dedace;
 // 222 218 206
 
-
-// ** NAV BAR **/
-
-.navbar-dark {
-
-    .navbar-brand {
-        color: $orange;
-    }
-    .navbar-brand:hover {
-        color: $orange;
-    }
-
-    .navbar-nav {
-        .nav-link {
-            color: $lightgrey;   
-        }
-        .nav-link:hover {
-            color: $orange;
-        } 
-    }
-
-}
-
-.bg-inverse {
-    background-color: $brown;
-}
+$blue: #23b6ea;
+// 35 182 234
+$bluetop: #2bbfed;
+// 43 191 237
+$lightbluebg: #e6ffff;
+// 230 255 255
+$yellow: #fdd93a;
+// 253 217 58
 
 
-// hamburger and border orange colour
-.navbar-toggler {
-    // unicode text
-    color: $orange;
-    border: $border-width solid $orange;
-}
 
 
 

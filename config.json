@@ -2,10 +2,7 @@
     "assets": {
         "fonts": {
             "google": [
-                "Wellfleet",
-                "Arvo:400,700,400italic,700italic", 
-                "Oswald",
-                "Goudy+Bookletter+1911"
+	    	    "Source+Sans+Pro"
             ]
         }
     },
