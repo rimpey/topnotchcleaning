@@ -3,46 +3,10 @@
    ================================= */
 
 footer {
-    //border-top: 2px solid $yellow;
+
     background-color: $blue;
     overflow: hidden;
     padding-bottom: 1rem;
-
-    h3.quotes {
-        color: $yellow;
-    }
-
-    ul {
-        list-style: none;
-        padding-left: 0;
-        padding-top: 1rem;
-
-        li {
-            //color: $lightgrey;  
-	    color: #fff;
-	    
-	    a, a:hover, a:focus {
-	    	color: #fff;
-		text-decoration: none;
-	    } 
-        }
-    }
-
-    span {
-            color: $lightgrey;
-            vertical-align: bottom;  
-
-            &.abn {
-                font-size: x-small;
-                color: $yellow;
-            }  
-        }
-    }
-/* =================================
-   LAYOUT / FOOTER
-   ================================= */
-
-footer {
 
     h1 {
         font-size: remCalc(30); 
@@ -53,12 +17,20 @@ footer {
     }
 
     ul {
+        
+        list-style: none;
+        padding-left: 0;
         padding-top: remCalc(18);
 
         li {
             font-size: remCalc(18); 
             font-family: 'Lato', sans-serif;
             color: #fff;
+
+            a, a:hover, a:focus {
+                color: #fff;
+                text-decoration: none;
+            } 
         }
     }
 
@@ -74,8 +46,10 @@ footer {
     }
 }
 
-/* Medium. Above 48em (768px) */
-@media screen and (min-width: 48em) {
+// *** Align 'F' facebook icon with ABN number
+
+/* Small. Above 34em (544px) */
+@media screen and (min-width: 34em) {
 
     footer {
 
