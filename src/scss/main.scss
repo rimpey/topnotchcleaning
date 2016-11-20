@@ -1,13 +1,15 @@
 @import "bootstrap";
 @import "font-awesome";
 
+@import "base/functions";
 @import "base/colours";
 @import "base/social";
 
 @import "components/buttons";
+@import "components/lists";
 
-@import "global/global";
-@import "global/nav";
+@import "layout/nav";
 @import "layout/footer";
+@import "layout/form";
 
-@import "slides/slides";
+@import "panels/panel";

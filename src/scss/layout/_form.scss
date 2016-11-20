@@ -1,0 +1,47 @@
+
+/* =================================
+   LAYOUT / FORM
+   ================================= */
+
+#quote {
+    background: #fff;
+    color: $brown;
+    
+    textarea {
+        resize: none; // removes the resize handle bottom right 
+        overflow: hidden; // no scroll 
+    }
+}
+
+.form-control {
+    background: $lightbluebg;  
+}
+
+input {
+    #input-name {
+
+        .form-control {
+            background: rgba(222, 218, 206, .8);
+
+            &:focus {  // trying to deal with User Agent Stylesheet Yellow colour auto fill text
+                background: rgba(222, 218, 206, .8); 
+                border-color: $darkgrey;
+                outline: none;   
+            }
+        }
+    }
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: $blue;
+    border-color: $blue;
+    float: right;
+
+    &:hover, &:active, &:focus, &:active:focus, &:active:hover {
+        color: #fff;
+        background-color: $blue;
+        border-color: $blue;  
+        outline: none; 
+    }
+}

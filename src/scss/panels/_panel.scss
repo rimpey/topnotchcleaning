@@ -1,0 +1,68 @@
+/* =================================
+   PANELS / PANEL
+   ================================= */
+
+.panel {
+
+    padding: remCalc(35) 0 remCalc(35) 0; 
+    position: relative;
+    border-bottom: remCalc(2) solid $yellow;
+
+    h1 {
+        font-size: remCalc(24); 
+        font-family: 'Roberto', sans-serif; 
+        padding-top: remCalc(20); 
+        text-align: left; 
+        color: $yellow; 
+    }
+
+    p {
+        font-size: remCalc(18); 
+        font-family: 'Lato', sans-serif;
+        padding-top: remCalc(10);
+        color: #fff;
+    }
+}
+
+.panel.no-bg-image {
+
+    p {
+        color: $brown;
+    }
+}
+
+.mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(35,182,234,0.6);
+}
+
+#meetus{
+    background:url('../img/kym-steve.jpg') 50% 0 no-repeat fixed;
+    color: #fff;
+    background-size: cover;
+}
+
+#clean {
+    background: #fff;
+}
+
+#clean-list {
+    background: url('../img/sponge.png') 50% 0 no-repeat fixed;
+    background-size: cover;
+}
+
+#garden {
+    background: #fff;
+}
+
+#garden-list {
+    background: url('../img/mower.png') 50% 0 no-repeat fixed;
+    background-size: cover;
+}
+
+
+

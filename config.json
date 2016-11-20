@@ -2,7 +2,9 @@
     "assets": {
         "fonts": {
             "google": [
-	    	    "Source+Sans+Pro"
+	    	    "Source+Sans+Pro",
+                "Roboto",
+                "Lato"
             ]
         }
     },

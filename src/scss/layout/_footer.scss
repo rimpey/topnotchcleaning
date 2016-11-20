@@ -38,3 +38,62 @@ footer {
             }  
         }
     }
+/* =================================
+   LAYOUT / FOOTER
+   ================================= */
+
+footer {
+
+    h1 {
+        font-size: remCalc(30); 
+        font-family: 'Roberto', sans-serif; 
+        padding-top: remCalc(20); 
+        text-align: left; 
+        color: $yellow; 
+    }
+
+    ul {
+        padding-top: remCalc(18);
+
+        li {
+            font-size: remCalc(18); 
+            font-family: 'Lato', sans-serif;
+            color: #fff;
+        }
+    }
+
+    //***  fb icon styling in _social.scss
+
+   .abn {
+
+        p {
+            color: $yellow;
+            font-size: smaller;
+            margin-bottom: remCalc(35);
+        }
+    }
+}
+
+/* Medium. Above 48em (768px) */
+@media screen and (min-width: 48em) {
+
+    footer {
+
+        .row.business {
+            position: relative;
+        }
+
+        .abn {
+
+            position: absolute;
+            right: 0;
+            bottom: 0;
+
+            p {
+                color: $yellow;
+                font-size: smaller;
+                margin-bottom: 0;
+            }
+        }
+    }
+}

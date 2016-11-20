@@ -1,0 +1,29 @@
+
+/* =================================
+   COMPONENTS / LISTS
+   ================================= */
+
+.services-list {
+    padding: remCalc(40) 0;
+
+    ul {
+        list-style: none;
+
+        li {
+            font-size: remCalc(20);
+            font-family: 'Lato', sans-serif;
+            margin-bottom: remCalc(20);
+            color: #fff;
+
+            // hanging indent
+            padding-left: remCalc(16);
+            text-indent: - remCalc(24);
+
+            &:before {
+                content: '\2022';
+                color: $yellow;
+                padding-right: remCalc(14);
+            }
+        }
+    }
+}
