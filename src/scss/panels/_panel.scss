@@ -41,9 +41,15 @@
 }
 
 #meetus{
-    background:url('../img/kym-steve.jpg') 50% 0 no-repeat fixed;
-    color: #fff;
+    // background:url('../img/kym-steve.jpg') 50% 0 no-repeat fixed;
+
+    background-image: url('../img/kym-steve.jpg');
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: cover;
+    
+    color: #fff;
 }
 
 #clean {

@@ -6,6 +6,14 @@
 #quote {
     background: #fff;
     color: $brown;
+    padding-top: remCalc(40);
+    padding-bottom: remCalc(40);
+
+    p {
+        font-size: remCalc(18); 
+        font-family: 'Lato', sans-serif;
+        padding-bottom: remCalc(20);
+    }
     
     textarea {
         resize: none; // removes the resize handle bottom right 

@@ -3,10 +3,10 @@
    COMPONENTS / LISTS
    ================================= */
 
-.services-list {
-    padding: remCalc(40) 0;
+.panel {
 
     ul {
+        border: remCalc(40) 0;
         list-style: none;
 
         li {
