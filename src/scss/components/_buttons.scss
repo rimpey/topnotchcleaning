@@ -7,3 +7,19 @@
    button.navbar-toggler:focus {
        outline:0;
     }
+
+    // on form
+
+.btn-primary {
+    color: #fff;
+    background-color: $blue;
+    border-color: $blue;
+    float: right;
+
+    &:hover, &:active, &:focus, &:active:focus, &:active:hover {
+        color: $yellow;
+        background-color: $blue;
+        border-color: $blue;  
+        outline: none; 
+    }
+}

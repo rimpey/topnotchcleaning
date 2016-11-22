@@ -40,16 +40,4 @@ input {
     }
 }
 
-.btn-primary {
-    color: #fff;
-    background-color: $blue;
-    border-color: $blue;
-    float: right;
 
-    &:hover, &:active, &:focus, &:active:focus, &:active:hover {
-        color: #fff;
-        background-color: $blue;
-        border-color: $blue;  
-        outline: none; 
-    }
-}

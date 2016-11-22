@@ -4,9 +4,23 @@
 
 .panel {
 
-    padding: remCalc(35) 0 remCalc(35) 0; 
     position: relative;
+    padding: remCalc(35) 0 remCalc(35) 0; 
     border-bottom: remCalc(2) solid $yellow;
+
+    // over write Bootstrap class so that .mask sits over .container without overlaying text
+    .container {
+        position: relative;
+    }
+
+    .mask {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(35,182,234,0.6);
+    }
 
     h1 {
         font-size: remCalc(24); 
@@ -22,22 +36,13 @@
         padding-top: remCalc(10);
         color: #fff;
     }
-}
 
-.panel.no-bg-image {
+    &.no-bg-image {
 
-    p {
-        color: $brown;
+        p {
+            color: $brown;
+        }
     }
-}
-
-.mask {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(35,182,234,0.6);
 }
 
 #meetus{
@@ -57,7 +62,12 @@
 }
 
 #clean-list {
-    background: url('../img/sponge.png') 50% 0 no-repeat fixed;
+    // background: url('../img/sponge.png') 50% 0 no-repeat fixed;
+
+    background-image: url('../img/sponge.png');
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: cover;
 }
 
@@ -66,7 +76,12 @@
 }
 
 #garden-list {
-    background: url('../img/mower.png') 50% 0 no-repeat fixed;
+    // background: url('../img/mower.png') 50% 0 no-repeat fixed;
+
+    background-image: url('../img/mower.png');
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: cover;
 }
 
