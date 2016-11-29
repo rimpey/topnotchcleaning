@@ -21,6 +21,13 @@
     }
 }
 
+#success_message{
+    display: none;
+    font-size: remCalc(18); 
+    font-family: 'Lato', sans-serif;
+    padding-bottom: remCalc(20);
+}
+
 .form-control {
     background: $lightbluebg;  
 }

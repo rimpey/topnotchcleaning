@@ -26,18 +26,21 @@ $(document).ready(function() {
 	var navbar = $('.navbar');
 	var navheader = $('#topnotch-menu');
 	var navbody = $('body');
+	var panels = $('.panel');
 
 	// See this for explanation on height, innerHeight and outerHeight :)
 	// http://www.texelate.co.uk/blog/post/91-jquery-whats-the-difference-between-height-innerheight-and-outerheight/
 	// Set the padding on the body based on the inital height of the navbar
 	var height = navbar.outerHeight();
 	navbody.css({paddingTop: height});   // can do .css with string property or JS object.  Don't need to put + 'px' actually
+	panels.css("background-position", "50% " + height + "px");
 
 	$('.navbar-toggler').on('click', function () {
 		var interval = setInterval(function () {
 			height = navbar.outerHeight();
 			// add height of hamburger menu to push slide down to view first line
 			navbody.css({paddingTop: height});
+			panels.css("background-position", "50% " + height + "px");
 			//console.log(height);
 			if (!navheader.hasClass('collapsing')) {
 				clearInterval(interval);
@@ -88,17 +91,20 @@ $(document).ready(function() {
 		// Submit Handler
 		submitHandler: function(form) {
 
+			// var $contactForm = $('form);
+
 			$.ajax({
 				type: "POST",
-				url: "https://formspree.io/topnotchclean1@hotmail.com", 
-				// url: "https://formspree.io/rhondaimpey@gmail.com", 
+				// url: "https://formspree.io/topnotchclean1@hotmail.com", 
+				url: "https://formspree.io/rhondaimpey@gmail.com", 
 				data: $(form).serialize(),
 				dataType : "json",
 				
 				success: function(result){
 					console.log("submit handler ajax success");
-					$("form").fadeOut(1000, function(){
-						$("#success_message").removeClass("hidden-xs-up").fadeIn();
+					
+					$("form").closest(".container").contents().fadeOut(1000, function(){
+						$("#success_message").fadeIn(1000);	
 					});
 				},
 
@@ -109,36 +115,6 @@ $(document).ready(function() {
 		}
 	});
 
-	//*** Form Validation 
-	// JQuery Validation without AJAX takes user off Web Page
-	// var constraints = {
-	// 	rules: {
-	// 		name: {
-	// 			required: true
-	// 		},
-	// 		email: {
-	// 			required: true,
-	// 			email: true // ensure correct format
-	// 		},
-	// 		phone: {
-	// 			required: true
-	// 		},
-	// 		message: {
-	// 			required: true
-	// 		}
-	// 	},
-	// 	// errorClass: "has-danger", // either errorClass property or just refer to errorClass directly as follows
-	// 	highlight: function(usrinput) {
-	// 		$(usrinput).parent().addClass("has-danger");
-	// 	},
-	// 	unhighlight: function(usrinput) {
-	// 		$(usrinput).parent().removeClass("has-danger");
-	// 	},
-	// 	errorPlacement: function(error, element) {
-    // 		leave empty to avoid default error msg
-  	// 	}	
-	// }
-
-	// call validation on form passing constraints object
-	// $("form").validate(constraints);	
+	// WordPress adds unnecessary empty <p></p> in the service listing
+	// $('p:empty').remove();
 });

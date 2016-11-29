@@ -27,3 +27,16 @@
         }
     }
 }
+
+/* Small. Above 34em (544px) */
+// @media screen and (min-width: 34em) {
+
+
+/* Portrait phones and smaller (480px) */
+@media (max-width: 30em) {
+    .panel {
+        p:empty {
+            display: none;
+        }
+    }
+}

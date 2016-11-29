@@ -5,8 +5,16 @@
 .panel {
 
     position: relative;
-    padding: remCalc(35) 0 remCalc(35) 0; 
+    // padding: remCalc(35) 0 remCalc(35) 0; 
+    padding: remCalc(45) 0 remCalc(45) 0; 
     border-bottom: remCalc(2) solid $yellow;
+
+    // background properties applied to all panels with images
+    background-position: 0 -50%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #fff;
 
     // over write Bootstrap class so that .mask sits over .container without overlaying text
     .container {
@@ -19,7 +27,7 @@
         left: 0;
         height: 100%;
         width: 100%;
-        background-color: rgba(35,182,234,0.6);
+        background-color: rgba(35,182,234,0.675);
     }
 
     h1 {
@@ -44,46 +52,3 @@
         }
     }
 }
-
-#meetus{
-    // background:url('../img/kym-steve.jpg') 50% 0 no-repeat fixed;
-
-    background-image: url('../img/kym-steve.jpg');
-    background-position: 50% 0;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    
-    color: #fff;
-}
-
-#clean {
-    background: #fff;
-}
-
-#clean-list {
-    // background: url('../img/sponge.png') 50% 0 no-repeat fixed;
-
-    background-image: url('../img/sponge.png');
-    background-position: 50% 0;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-}
-
-#garden {
-    background: #fff;
-}
-
-#garden-list {
-    // background: url('../img/mower.png') 50% 0 no-repeat fixed;
-
-    background-image: url('../img/mower.png');
-    background-position: 50% 0;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-}
-
-
-

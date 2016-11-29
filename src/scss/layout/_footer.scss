@@ -27,6 +27,11 @@ footer {
             font-family: 'Lato', sans-serif;
             color: #fff;
 
+            // here styled as WordPress doesn't allow <br /> between lines in a list
+            &:nth-child(4) {
+                padding-top: remCalc(20);
+            }
+
             a, a:hover, a:focus {
                 color: #fff;
                 text-decoration: none;
