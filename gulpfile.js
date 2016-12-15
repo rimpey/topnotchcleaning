@@ -1,69 +1,24 @@
 var gulp = require('gulp');
 var del = require('del');
-var path = require('path');
 var runSequence = require('run-sequence');
 var browserSync = require('browser-sync').create();
-var mainBowerFiles = require('main-bower-files');
-var autoprefixer = require('autoprefixer');
-var postcssFlexbugsFixes = require('postcss-flexbugs-fixes');
+// automatically loads plugins in the package.json
 var plugins = require('gulp-load-plugins')();
-var config = require('./config.json');
-var ghPages = require('gulp-gh-pages');
-// var validate = require('./src/vendor/jquery-validation');
 
-gulp.task('sass:inject', function () {
+/* DEVELOPMENT TASKS  */
+
+// compile sass to css with sourcemaps
+gulp.task('sass', function () {
     return gulp
         .src('src/scss/main.scss')
-        .pipe(plugins.inject(gulp.src(mainBowerFiles({ filter: '**/*.scss' }).concat(['src/scss/**/*.scss', '!src/scss/main.scss']), {read: false}), {
-            starttag: '// inject:scss',
-            endtag: '// endinject',
-            relative: true,
-            transform: function (filepath) {
-                return '@import "' + filepath + '";';
-            }
-        }))
         .pipe(plugins.sourcemaps.init())
         .pipe(plugins.sass())
         .pipe(plugins.sourcemaps.write())
         .pipe(gulp.dest('src/css'))
-        .pipe(browserSync.stream());
+        .pipe(browserSync.stream()); // No need to refresh browser as can just update css
 });
 
-gulp.task('sass', function () {
-    var bowerSassFiles = mainBowerFiles({ 
-        filter: '**/*.scss',
-        includeDev: true
-    });
-    var bowerSassIncludePaths = bowerSassFiles.map(path.dirname);
-
-    return gulp
-        .src('src/scss/main.scss')
-        .pipe(plugins.sourcemaps.init())
-        .pipe(plugins.sass({
-            includePaths: bowerSassIncludePaths
-        }))
-        .pipe(plugins.postcss([
-            postcssFlexbugsFixes, 
-            autoprefixer({ browsers: config.plugins.autoprefixer.browsers })
-        ]))
-        .pipe(plugins.sourcemaps.write())
-        .pipe(gulp.dest('src/css'))
-        .pipe(browserSync.stream());
-});
-
-gulp.task('watch', function () {
-    gulp.watch(['src/scss/**/*.scss', '!src/scss/main.scss'], gulp.series('sass'));
-    gulp.watch('src/markup/**/*.html', gulp.series('markup', function reload (done) {
-        browserSync.reload();
-        done();
-    }));
-    gulp.watch('src/js/**/*.js')
-        .on('change', function(path, stats) {
-            console.log('File ' + path + ' was changed, running tasks...');
-            browserSync.reload();
-        });
-});
-
+// init browserSync to serve from src directory
 gulp.task('browserSync', function () {
     browserSync.init({
         server: {
@@ -72,6 +27,33 @@ gulp.task('browserSync', function () {
     });
 });
 
+// tell broswerSync to refresh browser 
+gulp.task('refresh', function () {
+    browserSync.reload();
+});
+
+gulp.task('watch', function () {
+    gulp.watch('src/scss/**/*.scss', ['sass']);
+    gulp.watch('src/*.html', ['refresh']);
+    gulp.watch('src/js/**/*.js', ['refresh']);
+});
+
+// copy font awesome from vendor folder to src/fonts
+gulp.task('fonts:src', function() {
+    return gulp
+        .src('src/vendor/font-awesome/fonts/**.*')
+        .pipe(gulp.dest('src/fonts'));
+});
+
+
+
+/* DEPLOYMENT TASKS */
+
+gulp.task('clean:dist', function () {
+    return del('dist');
+});
+
+// combines and minifies css and js into single file for each
 gulp.task('useref', function () {
     return gulp
         .src('src/*.html')
@@ -81,58 +63,29 @@ gulp.task('useref', function () {
         .pipe(gulp.dest('dist'));
 });
 
+// copy and optimise images
 gulp.task('images', function () {
     return gulp
         .src('src/img/**/*.+(png|jpg|gif|svg)')
         .pipe(plugins.imagemin())
-        .pipe(gulp.dest('dist/img'))
+        .pipe(gulp.dest('dist/img'));
 });
 
-// copy font awesome from vendor folder to src/fonts
-gulp.task('icons', function() {
-    return gulp
-        .src('src/vendor/font-awesome/fonts/**.*')
-        .pipe(gulp.dest('src/fonts'));
-});
-
-gulp.task('fonts', function () {
+// copy fonts
+gulp.task('fonts:dist', function () {
     return gulp
         .src('src/fonts/**/*')
         .pipe(gulp.dest('dist/fonts'));
 });
 
-gulp.task('clean:dist', function () {
-    return del('dist');
-});
-
-gulp.task('markup', function () {
-    return gulp
-        .src('src/markup/*.html')
-        .pipe(plugins.injectPartials({
-            removeTags: true,
-            end: '<!-- endpartial -->'
-        }))
-        .pipe(plugins.inject(gulp.src(mainBowerFiles({includeDev: true}).concat(['src/js/**/*.js', 'src/css/**/*.css']), {read: false }), { 
-            removeTags: true,
-            addRootSlash: false,
-            ignorePath: 'src/'
-        }))
-        .pipe(plugins.htmlReplace({
-            fonts: {
-                src: config.assets.fonts.google,
-                tpl: '<link href="//fonts.googleapis.com/css?family=%s" rel="stylesheet" type="text/css">'
-            }
-        }, {
-            keepBlockTags: false
-        }))
-        .pipe(gulp.dest('src'));
-});
-
+// deploy to github pages
 gulp.task('githubpages', function () {
-    return gulp.src('./dist/**/*')
-        .pipe(ghPages());
-})
+    return gulp.src('dist/**/*')
+        .pipe(plugins.ghPages());
+});
 
-gulp.task('dist', gulp.series('clean:dist', 'sass', 'markup', gulp.parallel('useref', 'images', 'fonts'), 'githubpages'));
+gulp.task('dist', function () {
+    runSequence('clean:dist', 'sass', ['useref', 'images', 'fonts:dist'], 'githubpages');
+});
 
-gulp.task('default', gulp.series('sass', 'markup', 'icons', gulp.parallel('browserSync', 'watch')));
+gulp.task('default', ['sass', 'fonts:src', 'browserSync', 'watch']);

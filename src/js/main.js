@@ -1,6 +1,5 @@
 $(document).ready(function() {
 
-
 	// *** Top Navigation
 	// Click menu item to display slide panel
 
@@ -116,5 +115,5 @@ $(document).ready(function() {
 	});
 
 	// WordPress adds unnecessary empty <p></p> in the service listing
-	// $('p:empty').remove();
+	$('p:empty').remove();
 });
